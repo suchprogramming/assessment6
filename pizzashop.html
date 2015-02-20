@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <title>Pizza Time</title>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <h2>Epicodus Pizza</h2>
+      <h4>Come Grab a Byte!</h4>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="alert alert-danger error" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <span class="sr-only">Error:</span>
+      </div>
+      <div class="col-md-3">
+        <div class="inner-col">
+
+          <h4>Order Pizza</h4>
+
+          <form id="new-pizza">
+            <div class="form-group">
+              <label type="text" for="pizza-size">Pizza Dimensions</label>
+              <input type="text" id="pizza-size" class="form-control" placeholder="Diameter (inches)">
+              <br>
+              <label type="text" for="topping">Topping Options</label>
+              <br>
+              <div class="radio">
+                <label><input type="radio" name="pizza-topping" value="Cheese">Cheese</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="pizza-topping" value="Pepperoni">Pepperoni</label>
+              </div>
+            </div>
+            <br>
+            <button type= "submit" class="btn btn-success">Place Order</button>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="inner-col">
+          <h4>Order Results</h4>
+
+          <div id="pizza-result">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
