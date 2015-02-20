@@ -2,8 +2,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <title>Pizza Time</title>
 </head>
@@ -11,16 +11,15 @@
   <div class="container">
     <div class="nav">
       <h2>Epicodus Pizza</h2>
-      <h4>Come Grab a Byte!</h4>
+      <h4>Come Grab a Byte! </h4>
     </div>
   </div>
   <div class="container">
     <div class="row">
       <div class="alert alert-danger error" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign"></span>
-        <span class="sr-only">Error:</span>
+        <span class="glyphicon glyphicon-exclamation-sign"></span><span class="text"></span>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6">
         <div class="inner-col">
 
           <h4>Order Pizza</h4>
@@ -45,12 +44,11 @@
 
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6 result">
         <div class="inner-col">
           <h4>Order Results</h4>
 
           <div id="pizza-result">
-
           </div>
 
         </div>
