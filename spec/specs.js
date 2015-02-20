@@ -18,7 +18,7 @@ describe("YummyPizza", function() {
     });
 
     it("returns pizza slices based on diameter", function() {
-      expect(YummyPizza.slicePizza(16)).to.equal(8);
+      expect(YummyPizza.slicePizza(17)).to.equal(8);
     });
   });
 });

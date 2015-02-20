@@ -11,7 +11,7 @@
   <div class="container">
     <div class="nav">
       <h2>Epicodus Pizza</h2>
-      <h4>Come Grab a Byte! </h4>
+      <h4>Come Grab a Byte!</h4>
     </div>
   </div>
   <div class="container">
@@ -19,7 +19,7 @@
       <div class="alert alert-danger error" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign"></span><span class="text"></span>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="inner-col">
 
           <h4>Order Pizza</h4>
@@ -31,20 +31,25 @@
               <br>
               <label type="text" for="topping">Topping Options</label>
               <br>
-              <div class="radio">
-                <label><input type="radio" name="pizza-topping" value="Cheese">Cheese</label>
+              <div class="checkbox">
+                <label><input type="checkbox" name="pizza-topping" value="Canadian Bacon">Canadian Bacon</label>
               </div>
-              <div class="radio">
-                <label><input type="radio" name="pizza-topping" value="Pepperoni">Pepperoni</label>
+              <div class="checkbox">
+                <label><input type="checkbox" name="pizza-topping" value="Sausage">Sausage</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="pizza-topping" value="Cheese">Cheese</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="pizza-topping" value="Pepperoni">Pepperoni</label>
               </div>
             </div>
-            <br>
             <button type= "submit" class="btn btn-success">Place Order</button>
           </form>
 
         </div>
       </div>
-      <div class="col-md-6 result">
+      <div class="col-md-4 result">
         <div class="inner-col">
           <h4>Order Results</h4>
 
@@ -53,6 +58,18 @@
 
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="inner-col">
+          <h4>Order History</h4>
+
+          <ul id="order-history">
+
+          </ul>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </body>

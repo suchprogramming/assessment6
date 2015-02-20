@@ -1,8 +1,11 @@
+var orders = []
 var YummyPizza = {
   diameter: 0,
+  orderDate: null,
   slices: 0,
-  topping: null,
+  toppings: [],
   slicePizza: function(diameter) {
+    this.diameter = diameter
     if (isNaN(diameter) || diameter < 1) {
       return false;
     } else {
@@ -21,23 +24,31 @@ var YummyPizza = {
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-    $(".error").hide();
 
     var inputtedPizzaDiameter = parseInt($("input#pizza-size").val());
-    var inputtedPizzaTopping = $("#new-pizza input[type='radio']:checked").val();
+    var pizzaToppings = $('input[name=pizza-topping]:checked').map(function() {
+      return $(this).parent().text();
+    }).get();
+
+    // var inputtedPizzaTopping = $("#new-pizza input[type='checkbox']:checked").val();
 
     $("input#pizza-size").val("");
+    $('input:checkbox').removeAttr('checked');
 
     var newPizza = Object.create(YummyPizza);
     newPizza.diameter = inputtedPizzaDiameter;
+    newPizza.orderDate = ((new Date().toLocaleDateString()) + " " + (new Date().toLocaleTimeString()));
     newPizza.slices = newPizza.slicePizza(newPizza.diameter);
-    newPizza.topping = inputtedPizzaTopping;
+    newPizza.toppings = [];
+    newPizza.toppings.push(pizzaToppings);
+    orders.push(newPizza);
 
     if (newPizza.slices) {
       $(".result").show();
-      $("#pizza-result").text("Your Pizza Will Have" + " "
-      + newPizza.topping + " " + "and "
-      + newPizza.slices + " slices!");
+      $("#pizza-result").text("Your " + newPizza.diameter
+      + " inch" + " Pizza Will Have " + newPizza.toppings
+      + " and " + newPizza.slices + " slices!");
+      $("ul#order-history").append("<li>" + newPizza.orderDate + "</li>")
     } else {
       $(".error .text").text(" Invalid or Blank Dimension!");
       $(".result").hide();
