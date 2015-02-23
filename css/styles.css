@@ -13,3 +13,10 @@
 .result{
   display: none;
 }
+.col-md-12 {
+  margin-top: 20px;
+  display:none;
+}
+td {
+  background-color: #fff;
+}

@@ -1,12 +1,11 @@
 var orders = []
 var YummyPizza = {
-  diameter: 0,
+  diameter: null,
   orderDate: null,
-  slices: 0,
+  slices: null,
   toppings: [],
   slicePizza: function(diameter) {
-    this.diameter = diameter
-    if (isNaN(diameter) || diameter < 1) {
+    if (isNaN(this.diameter) || this.diameter < 1) {
       return false;
     } else {
       var area = Math.floor(3.14159 * (Math.pow((diameter / 2), 2)));
@@ -45,14 +44,18 @@ $(document).ready(function() {
 
     if (newPizza.slices) {
       $(".result").show();
+      $(".error").hide();
+      $(".form-group").addClass("has-success has-feedback").removeClass("has-error has-feedback");
       $("#pizza-result").text("Your " + newPizza.diameter
       + " inch" + " Pizza Will Have " + newPizza.toppings
       + " and " + newPizza.slices + " slices!");
-      $("ul#order-history").append("<li>" + newPizza.orderDate + "</li>")
+      $(".col-md-12").show();
+      $("#order-info").append("<tr>" + "<td>" + newPizza.orderDate + "</td>" + "<td>" + newPizza.diameter + "</td>" + "<td>" + newPizza.toppings + "</td>" + "</tr>");
     } else {
-      $(".error .text").text(" Invalid or Blank Dimension!");
       $(".result").hide();
       $(".error").show();
+      $(".form-group").addClass("has-error has-feedback").removeClass("has-success has-feedback");;
+      $(".error .text").text(" Invalid or Blank Dimension!");
     }
   });
 });

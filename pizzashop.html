@@ -19,16 +19,16 @@
       <div class="alert alert-danger error" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign"></span><span class="text"></span>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="inner-col">
 
           <h4>Order Pizza</h4>
 
           <form id="new-pizza">
             <div class="form-group">
-              <label type="text" for="pizza-size">Pizza Dimensions</label>
+              <label class="control-label" for="pizza-size">Pizza Dimensions</label>
               <input type="text" id="pizza-size" class="form-control" placeholder="Diameter (inches)">
-              <br>
+            </div>
               <label type="text" for="topping">Topping Options</label>
               <br>
               <div class="checkbox">
@@ -43,13 +43,12 @@
               <div class="checkbox">
                 <label><input type="checkbox" name="pizza-topping" value="Pepperoni">Pepperoni</label>
               </div>
-            </div>
             <button type= "submit" class="btn btn-success">Place Order</button>
           </form>
 
         </div>
       </div>
-      <div class="col-md-4 result">
+      <div class="col-md-6 result">
         <div class="inner-col">
           <h4>Order Results</h4>
 
@@ -59,13 +58,24 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+    </div>
+    <div class="row">
+
+      <div class="col-md-12">
         <div class="inner-col">
           <h4>Order History</h4>
 
-          <ul id="order-history">
-
-          </ul>
+          <table class="table table-condensed table-bordered" id="order-info">
+          <thead>
+            <tr class="active">
+              <th> Order Date </th>
+              <th> Size </th>
+              <th> Info </th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
 
         </div>
       </div>
