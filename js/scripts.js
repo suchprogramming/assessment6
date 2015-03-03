@@ -29,8 +29,6 @@ $(document).ready(function() {
       return $(this).parent().text();
     }).get();
 
-    // var inputtedPizzaTopping = $("#new-pizza input[type='checkbox']:checked").val();
-
     $("input#pizza-size").val("");
     $('input:checkbox').removeAttr('checked');
 
@@ -50,7 +48,8 @@ $(document).ready(function() {
       + " inch" + " Pizza Will Have " + newPizza.toppings
       + " and " + newPizza.slices + " slices!");
       $(".col-md-12").show();
-      $("#order-info").append("<tr>" + "<td>" + newPizza.orderDate + "</td>" + "<td>" + newPizza.diameter + "</td>" + "<td>" + newPizza.toppings + "</td>" + "</tr>");
+      $("#order-info").append("<tr>" + "<td>" + newPizza.orderDate + "</td>" + "<td>" + newPizza.diameter
+      + "</td>" + "<td>" + newPizza.toppings + "</td>" + "</tr>");
     } else {
       $(".result").hide();
       $(".error").show();
